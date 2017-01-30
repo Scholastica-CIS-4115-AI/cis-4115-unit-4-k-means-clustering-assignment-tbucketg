@@ -74,9 +74,14 @@ public class Kmeans {
         // this method must set cluster[m].x = average of all the data[i].x values for 
         //    the data points in this cluster, i.e. when data[i].type == m
         // this method must do the same for cluster[m].y
-       System.out.println("----  Calculating new location for cluster ----" + m);
+        
+         cluster[m].x = m;
+         cluster[m].y = m;
+         
+        System.out.println("----  Calculating new location for cluster ----" + m);
         System.out.println("   This cluster is now at x=" + cluster[m].x + " and y= " + cluster[m].y);
         for (int d = 0; d < data.length; d++) {
+          
             // check if this data point is in cluster m
             if (data[d].type == m) {
                 System.out.println("   Found data point in this cluster at x= " + data[d].x + " and y= " + data[d].y);
